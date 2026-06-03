@@ -7,7 +7,7 @@ import { registerGenerateCard } from "./tools/generate-card.js";
 import { registerComposeCard } from "./tools/compose-card.js";
 
 const server = new McpServer({
-  name: "social-card",
+  name: "guizang-social-card",
   version: "0.1.0",
 });
 

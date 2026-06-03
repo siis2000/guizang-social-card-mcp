@@ -1,7 +1,7 @@
 {
-  "name": "social-card",
+  "name": "guizang-social-card",
   "version": "0.1.0",
-  "description": "Generate social card HTML from prompts. Supports Editorial, Swiss, and Neo-Chinese visual systems with 46 layout recipes. Uses ModelScope LLM for copy generation and Z-Image-Turbo for AI image generation.",
+  "description": "Generate Guizang-style social card HTML from prompts. Supports Editorial, Swiss, and Neo-Chinese visual systems with 46 layout recipes. Uses ModelScope LLM for copy generation and Z-Image-Turbo for AI image generation.",
   "transport": "stdio",
   "runtime": "nodejs20",
   "entry": "dist/server.js",

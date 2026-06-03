@@ -1,10 +1,10 @@
 {
-  "name": "social-card-mcp",
+  "name": "guizang-social-card-mcp",
   "version": "0.1.0",
-  "description": "MCP server for generating social card HTML. Supports Editorial, Swiss, and Neo-Chinese visual systems with 46 layout recipes.",
+  "description": "MCP server for generating Guizang-style social card HTML. Supports Editorial, Swiss, and Neo-Chinese visual systems with 46 layout recipes.",
   "type": "module",
   "bin": {
-    "social-card-mcp": "./dist/server.js"
+    "guizang-social-card": "./dist/server.js"
   },
   "scripts": {
     "build": "tsc",
