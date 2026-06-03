@@ -12,7 +12,6 @@ export interface LayoutRecipe {
 }
 
 export const LAYOUT_RECIPES: LayoutRecipe[] = [
-  // ── Editorial M01-M19 ──
   { id: "M01", name: "Magazine Issue Cover", system: "editorial", type: "cover", minDensity: "title + 3 short paragraphs OR title + 2 paragraphs + numbered footer list", hardLimits: "none", description: "Best for Rednote page 1, portrait social cards, or article-card covers." },
   { id: "M02", name: "Field Note Photo", system: "editorial", type: "content", minDensity: "large documentary photo + narrow caption column or bottom caption band + one short takeaway", hardLimits: "none", description: "Best for outdoor, object, hardware, or real-world observation." },
   { id: "M03", name: "Editorial Essay Split", system: "editorial", type: "content", minDensity: "title + 3 short paragraphs OR title + 2 paragraphs + numbered footer list", hardLimits: "none", description: "Best for explaining one idea with nuance." },
@@ -32,8 +31,6 @@ export const LAYOUT_RECIPES: LayoutRecipe[] = [
   { id: "M17", name: "Timeline / Chronology", system: "editorial", type: "content", minDensity: "title + 5 nodes with desc lines", hardLimits: "max 8 nodes on 3:4; 9+ split into two pages", description: "Best for travel itineraries, product evolution, or historical narratives." },
   { id: "M18", name: "Q&A / Interview", system: "editorial", type: "content", minDensity: "title + 3 Q&A pairs with ≥2-line answers", hardLimits: "max 5 Q&A pairs on 3:4", description: "Best for interview excerpts or dialogue-heavy content." },
   { id: "M19", name: "Tutorial + Screenshot", system: "editorial", type: "content", minDensity: "title + 3 steps with screenshots", hardLimits: "max 5 steps on 3:4", description: "Best for step-by-step tutorials or how-to guides." },
-
-  // ── Swiss S01-S15 ──
   { id: "S01", name: "Accent Cover", system: "swiss", type: "cover", minDensity: "full accent or off-white background + big light-weight title + abstract block", hardLimits: "none", description: "Best for Rednote cover." },
   { id: "S02", name: "Two Signals / Comparison", system: "swiss", type: "content", minDensity: "page title + two large rectangular modules", hardLimits: "none", description: "Best for explaining two sources, options, or directions." },
   { id: "S03", name: "Data Layer / File Card", system: "swiss", type: "content", minDensity: "large file-type block + 3-4 properties", hardLimits: "none", description: "Best for Markdown or database information." },
@@ -49,8 +46,6 @@ export const LAYOUT_RECIPES: LayoutRecipe[] = [
   { id: "S13", name: "Rating / Score Card", system: "swiss", type: "summary", minDensity: "kicker + title + overall score + 3 sub-scores + summary note", hardLimits: "max 5 sub-scores on 3:4", description: "Best for product reviews or service ratings." },
   { id: "S14", name: "Conversation / AI Chat", system: "swiss", type: "content", minDensity: "title + 5 alternating messages + bottom stats", hardLimits: "max 6 messages on 3:4", description: "Best for chat highlights or conversation excerpts." },
   { id: "S15", name: "Price / Feature Comparison", system: "swiss", type: "content", minDensity: "title + 5-6 comparison rows + verdict line", hardLimits: "max 4 columns (products) on 3:4", description: "Best for product comparisons or feature matrices." },
-
-  // ── Neo-Chinese C01-C12 ──
   { id: "C01", name: "Scroll-Title Cover", system: "neochinese", type: "cover", minDensity: "title + colophon + seal", hardLimits: "title max 4 Chinese characters in vertical mode", description: "Best for Rednote cover page 1 or neo-Chinese carousel opener." },
   { id: "C02", name: "Colophon Essay", system: "neochinese", type: "content", minDensity: "title + 2 paragraphs + colophon", hardLimits: "none", description: "Best for editorial essays or personal reflections." },
   { id: "C03", name: "Cinnabar Annotation", system: "neochinese", type: "content", minDensity: "2 paragraphs + 2 cinnabar annotations", hardLimits: "none", description: "Best for commentary or critiques." },
@@ -65,7 +60,6 @@ export const LAYOUT_RECIPES: LayoutRecipe[] = [
   { id: "C12", name: "Stele Rubbing", system: "neochinese", type: "summary", minDensity: "title + 2 supporting lines + colophon", hardLimits: "none", description: "Best for bold statements or declarations." },
 ];
 
-/** Get recipes filtered by system and/or type */
 export function getRecipes(system?: VisualSystem, type?: PageType): LayoutRecipe[] {
   return LAYOUT_RECIPES.filter((r) => {
     if (system && r.system !== system) return false;
@@ -74,7 +68,6 @@ export function getRecipes(system?: VisualSystem, type?: PageType): LayoutRecipe
   });
 }
 
-/** Get a single recipe by ID */
 export function getRecipe(id: string): LayoutRecipe | undefined {
   return LAYOUT_RECIPES.find((r) => r.id === id);
 }
