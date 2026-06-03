@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN" data-neo-theme="vermilion-ink">
+<head>
+<meta charset="utf-8">
+<title>[Neo-Chinese] Social Card Set</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;500&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap">
+<style>
+/* Neo-Chinese Seed Template - 5 themes, scholar aesthetic */
+:root,[data-neo-theme="vermilion-ink"]{--neo-paper:#f5efe0;--neo-ink:#1a1a1a;--neo-accent:#c23b22;--neo-seal-bg:#c23b22;--neo-gold:#b8963e;--neo-line:rgba(26,26,26,.15);--ink-rgb:26,26,26;--paper-rgb:245,239,224}
+[data-neo-theme="celadon"]{--neo-paper:#e8ede4;--neo-ink:#1e2b23;--neo-accent:#5b8c6f;--neo-seal-bg:#5b8c6f;--neo-gold:#8a9e6b;--neo-line:rgba(30,43,35,.15);--ink-rgb:30,43,35;--paper-rgb:232,237,228}
+[data-neo-theme="ochre"]{--neo-paper:#f0e4d0;--neo-ink:#231711;--neo-accent:#a0522d;--neo-seal-bg:#a0522d;--neo-gold:#c2984a;--neo-line:rgba(35,23,17,.15);--ink-rgb:35,23,17;--paper-rgb:240,228,208}
+[data-neo-theme="indigo"]{--neo-paper:#1b2440;--neo-ink:#f0ebe0;--neo-accent:#d4a94e;--neo-seal-bg:#d4a94e;--neo-gold:#d4a94e;--neo-line:rgba(240,235,224,.18);--ink-rgb:240,235,224;--paper-rgb:27,36,64}
+[data-neo-theme="bamboo"]{--neo-paper:#edf2e8;--neo-ink:#162318;--neo-accent:#4a7c59;--neo-seal-bg:#4a7c59;--neo-gold:#7a9b5a;--neo-line:rgba(22,35,24,.14);--ink-rgb:22,35,24;--paper-rgb:237,242,232}
+:root{--serif:"Noto Serif SC","Songti SC",serif;--kai:"Ma Shan Zheng","ZCOOL XiaoWei","KaiTi",cursive}
+html,body,.content,.poster{hanging-punctuation:first allow-end last;line-break:strict;text-spacing:normal;text-rendering:optimizeLegibility}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:#1a1a1a;font-family:var(--serif);color:var(--neo-ink);-webkit-font-smoothing:antialiased;padding:64px 32px}
+.sheet{display:flex;flex-direction:column;align-items:center;gap:48px}
+.poster{position:relative;background:var(--neo-paper);color:var(--neo-ink);overflow:hidden}
+.poster.xhs{width:1080px;height:1440px}
+.poster.square{width:1080px;height:1080px}
+.poster.wide{width:2100px;height:900px}
+.poster figure{margin:0}
+.poster.xhs .content{padding:96px 88px}
+.poster.square .content{padding:88px 88px}
+.poster.wide .content{padding:88px 120px}
+.content{position:relative;width:100%;height:100%;z-index:2}
+.paper-grain{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.28;mix-blend-mode:multiply;background-image:radial-gradient(rgba(0,0,0,.04) 1px,transparent 1px);background-size:3px 3px}
+.stack{display:flex;flex-direction:column}.row{display:flex;flex-direction:row}
+.gap-2{gap:24px}.gap-4{gap:48px}
+.center{text-align:center}.grow{flex:1}
+.h-scroll{font-family:var(--serif);font-weight:500;font-size:96px;letter-spacing:.08em;margin:0;color:var(--neo-ink)}
+.h-seal{font-family:var(--serif);font-weight:700;font-size:56px;letter-spacing:.06em;margin:0;color:var(--neo-accent)}
+.h-verse{font-family:var(--serif);font-weight:400;font-size:42px;line-height:1.6;letter-spacing:.04em;margin:0}
+.h-couplet{font-family:var(--kai);font-weight:400;font-size:48px;line-height:1.5;letter-spacing:.06em;margin:0}
+.body-nc{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.75;color:rgba(var(--ink-rgb),.82);margin:0 0 18px}
+.colophon{font-family:var(--kai);font-weight:400;font-size:20px;letter-spacing:.06em;color:var(--neo-muted);margin:0}
+.seal{display:flex;align-items:center;justify-content:center;width:72px;height:72px;border-radius:50%;background:var(--neo-seal-bg);color:var(--neo-paper);writing-mode:vertical-rl;font-family:var(--serif);font-weight:700;font-size:18px;letter-spacing:.12em;padding:8px 0}
+.seal-lg{width:96px;height:96px;font-size:22px}
+.cinnabar{color:var(--neo-accent);font-family:var(--kai);font-size:22px;letter-spacing:.04em}
+.cinnabar-block{border-left:3px solid var(--neo-accent);padding-left:20px;font-family:var(--kai);color:var(--neo-accent);font-size:22px;line-height:1.6}
+.rule-hl{height:1px;background:var(--neo-line);border:0;margin:24px 0}
+.rule-ac{height:2px;background:var(--neo-accent);border:0;margin:24px 0;width:80px}
+.frame-img{position:relative;overflow:hidden;background:var(--neo-paper);display:block;margin:0}
+.frame-img img{width:100%;height:100%;object-fit:cover;object-position:center 50%;display:block}
+.frame-img.r-3x4{aspect-ratio:3/4}.frame-img.r-1x1{aspect-ratio:1/1}.frame-img.r-4x3{aspect-ratio:4/3}.frame-img.r-16x9{aspect-ratio:16/9}
+</style>
+</head>
+<body>
+<main class="sheet">
+<!-- POSTERS_HERE -->
+<section class="poster xhs" id="nc-01">
+  <div class="paper-grain"></div>
+  <div class="content stack gap-4" style="justify-content:center;">
+    <div class="row gap-4" style="align-items:center;">
+      <div class="stack gap-2" style="flex:1;">
+        <h1 class="h-scroll">[Title]</h1>
+        <p class="colophon">Colophon</p>
+      </div>
+      <div class="seal seal-lg"><span>GuiZang</span></div>
+    </div>
+  </div>
+</section>
+</main>
+</body>
+</html>

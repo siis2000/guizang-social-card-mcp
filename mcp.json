@@ -1,0 +1,30 @@
+{
+  "name": "guizang-social-card",
+  "version": "0.1.0",
+  "description": "Generate Guizang-style social card HTML from prompts. Supports Editorial, Swiss, and Neo-Chinese visual systems with 46 layout recipes. Uses ModelScope LLM for copy generation and Z-Image-Turbo for AI image generation.",
+  "transport": "stdio",
+  "runtime": "nodejs20",
+  "entry": "dist/server.js",
+  "install": "npm install && npm run build",
+  "env": [
+    {
+      "name": "MODELSCOPE_API_KEY",
+      "description": "Your ModelScope Access Token for LLM and text-to-image APIs. Get it from https://modelscope.cn/my/myaccesstoken",
+      "required": true
+    }
+  ],
+  "tools": [
+    {
+      "name": "plan_card",
+      "description": "Plan the card structure: choose visual system, theme, and layout recipes for each page based on the user's prompt."
+    },
+    {
+      "name": "generate_card",
+      "description": "Generate copy and image candidates for each page using ModelScope LLM, text-to-image, and web image search."
+    },
+    {
+      "name": "compose_card",
+      "description": "Compose the final single-file HTML with embedded Base64 images using the selected template, theme, copy, and images."
+    }
+  ]
+}

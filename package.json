@@ -1,0 +1,31 @@
+{
+  "name": "guizang-social-card-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for generating Guizang-style social card HTML. Supports Editorial, Swiss, and Neo-Chinese visual systems with 46 layout recipes.",
+  "type": "module",
+  "bin": {
+    "guizang-social-card-mcp": "./dist/server.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "tsc --watch",
+    "validate": "node validate-social-deck.mjs",
+    "render": "node scripts/render.mjs"
+  },
+  "keywords": ["mcp", "social-card", "rednote", "xiaohongshu", "editorial", "swiss", "neochinese"],
+  "author": "op7418",
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.23.0",
+    "undici": "^6.21.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "@types/node": "^22.0.0"
+  },
+  "optionalDependencies": {
+    "playwright": "^1.60.0"
+  }
+}
