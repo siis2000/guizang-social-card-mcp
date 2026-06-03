@@ -2,7 +2,7 @@ import { fetch } from "undici";
 
 const BASE_URL = "https://api-inference.modelscope.cn/v1";
 const POLL_INTERVAL_MS = 5000;
-const MAX_POLLS = 12; // 5s × 12 = 60s
+const MAX_POLLS = 12;
 
 export interface T2IResult {
   url: string;
@@ -48,9 +48,7 @@ export async function pollImageTask(
       },
     });
 
-    if (res.status !== 200) {
-      continue; // retry on transient errors
-    }
+    if (res.status !== 200) continue;
 
     const data = (await res.json()) as {
       task_status: string;
@@ -65,13 +63,11 @@ export async function pollImageTask(
     if (data.task_status === "FAILED") {
       throw new Error(`ModelScope T2I task failed: ${data.message ?? "unknown"}`);
     }
-    // PENDING / RUNNING → continue polling
   }
 
   throw new Error(`ModelScope T2I timeout after ${MAX_POLLS * POLL_INTERVAL_MS / 1000}s`);
 }
 
-/** Convenience: create + poll in one call */
 export async function generateImage(
   apiKey: string,
   prompt: string,
