@@ -1,6 +1,6 @@
-# 实施计划：Guizang Social Card MCP 服务
+# 实施计划：Social Card MCP 服务
 
-> 将 guizang-social-card-skill 改造为魔搭社区托管的 MCP 服务
+> 将 social-card-skill 改造为魔搭社区托管的 MCP 服务
 > 基于 v0.14+ 版本（含新中式系统、6 新版式、渲染管线优化、图片智能处理、中文排版硬化）
 
 ---
@@ -171,7 +171,7 @@
 ## 四、项目结构（新增/修改）
 
 ```
-guizang-social-card-skill/
+social-card-skill/
 ├── src/                              ← 新增
 │   ├── server.ts                     # MCP server 入口（stdio）
 │   ├── tools/
@@ -218,11 +218,11 @@ guizang-social-card-skill/
 
 ```json
 {
-  "name": "guizang-social-card-mcp",
+  "name": "social-card-mcp",
   "version": "0.1.0",
   "type": "module",
   "bin": {
-    "guizang-social-card-mcp": "./dist/server.js"
+    "social-card-mcp": "./dist/server.js"
   },
   "scripts": {
     "build": "tsc",
@@ -269,9 +269,9 @@ guizang-social-card-skill/
 
 ```json
 {
-  "name": "guizang-social-card",
+  "name": "social-card",
   "version": "0.1.0",
-  "description": "Generate Guizang-style social card HTML from prompts. Supports Editorial, Swiss, and Neo-Chinese visual systems with 46 layout recipes.",
+  "description": "Generate social card HTML from prompts. Supports Editorial, Swiss, and Neo-Chinese visual systems with 46 layout recipes.",
   "transport": "stdio",
   "runtime": "nodejs20",
   "entry": "dist/server.js",
@@ -472,7 +472,7 @@ import { fetch } from "undici";
 
 export async function encodeImageToBase64(url: string): Promise<string> {
   const res = await fetch(url, {
-    headers: { "User-Agent": "guizang-social-card-mcp/0.1.0" }
+    headers: { "User-Agent": "social-card-mcp/0.1.0" }
   });
   const buf = await res.arrayBuffer();
   const mime = res.headers["content-type"] || "image/jpeg";

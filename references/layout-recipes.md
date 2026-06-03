@@ -1,6 +1,6 @@
 # Layout Recipes
 
-These are static social-image recipes adapted from the Guizang PPT style language. They are not copied PPT templates.
+These are static social-image recipes adapted from the PPT style language. They are not copied PPT templates.
 
 ## Editorial Magazine x E-ink Recipes
 

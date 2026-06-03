@@ -1,4 +1,4 @@
-# Guizang Social Card Skill — Code Wiki
+# Social Card Skill — Code Wiki
 
 > 结构化技术文档，涵盖项目架构、模块职责、关键类/函数、依赖关系与运行方式。
 > 版本：v0.14 · 最后更新：2026-05-28
@@ -7,7 +7,7 @@
 
 ## 1. 项目概述
 
-**Guizang Social Card Skill** 是一个面向 Claude Code / Codex 等 AI Agent 环境的"技能包"（Skill），用于将文章、文案、截图、产品笔记、字幕或照片自动生成为高质量社交图文卡片。
+**Social Card Skill** 是一个面向 Claude Code / Codex 等 AI Agent 环境的"技能包"（Skill），用于将文章、文案、截图、产品笔记、字幕或照片自动生成为高质量社交图文卡片。
 
 ### 1.1 核心能力
 
@@ -35,7 +35,7 @@
 ### 2.1 目录结构
 
 ```
-guizang-social-card-skill/
+social-card-skill/
 ├── SKILL.md                          # 7 步工作流入口（Agent 调用主文件）
 ├── HANDOFF.md                        # 交接文档：事实 + 版本历史
 ├── PRODUCT.md                        # 产品文档：思考 + 决策 + Roadmap
@@ -349,13 +349,13 @@ validate-social-deck.mjs
 
 ```bash
 # 方式一：一行命令（推荐）
-npx skills add https://github.com/op7418/guizang-social-card-skill --skill guizang-social-card-skill
+npx skills add https://github.com/op7418/social-card-skill --skill social-card-skill
 
 # 方式二：手动克隆
-git clone https://github.com/op7418/guizang-social-card-skill.git ~/.claude/skills/guizang-social-card-skill
+git clone https://github.com/op7418/social-card-skill.git ~/.claude/skills/social-card-skill
 
 # 安装依赖
-cd ~/.claude/skills/guizang-social-card-skill
+cd ~/.claude/skills/social-card-skill
 npm install
 ```
 
@@ -390,7 +390,7 @@ Step 7: Deliver → Playwright 渲染 PNG → 展示给用户 → 按需运行 v
 mkdir social-card-example && cd social-card-example
 
 # 拷贝种子模板
-cp ~/.claude/skills/guizang-social-card-skill/assets/template-swiss-card.html index.html
+cp ~/.claude/skills/social-card-skill/assets/template-swiss-card.html index.html
 
 # 编辑 index.html，替换 <!-- POSTERS_HERE --> 为实际内容
 

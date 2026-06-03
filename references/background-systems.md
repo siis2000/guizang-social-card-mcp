@@ -1,6 +1,6 @@
 # Background Systems
 
-The original Guizang PPT electronic-magazine mode uses WebGL fluid, contour, ink, and chromatic atmosphere. Static Rednote/WeChat images should preserve that feeling when the style mode is Editorial Magazine x E-ink.
+The original PPT electronic-magazine mode uses WebGL fluid, contour, ink, and chromatic atmosphere. Static Rednote/WeChat images should preserve that feeling when the style mode is Editorial Magazine x E-ink.
 
 Do not reduce this mode to a flat beige page with a faint grid. Do not add visible grid, dot-matrix, or drafting-paper patterns to the background.
 

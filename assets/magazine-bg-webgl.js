@@ -1,4 +1,4 @@
-/* Reusable Guizang-style electronic magazine background.
+/* Reusable electronic magazine background.
    Copy or inline into generated HTML. It renders a deterministic WebGL ink-flow
    canvas and falls back to 2D if WebGL is unavailable. */
 (function () {

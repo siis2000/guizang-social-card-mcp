@@ -1,6 +1,6 @@
 # Style System
 
-This skill extracts Guizang PPT visual principles for static social images. It does not depend on the original PPT templates.
+This skill extracts PPT visual principles for static social images. It does not depend on the original PPT templates.
 
 ## Shared Rules
 

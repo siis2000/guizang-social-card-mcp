@@ -1,6 +1,6 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
-image-utils.py -- Image intelligence for Guizang Social Card Skill.
+image-utils.py -- Image intelligence for Social Card Skill.
 
 Provides:
 - extract_dominant_colors: find dominant hues from an image
@@ -182,7 +182,7 @@ def cmd_assess(args):
         print(f"Tint: {tint['css']}")
 
 def main():
-    parser = argparse.ArgumentParser(description="Image intelligence for Guizang Social Card")
+    parser = argparse.ArgumentParser(description="Image intelligence for Social Card")
     sub = parser.add_subparsers(dest="command")
 
     assess = sub.add_parser("assess", help="Full assessment")

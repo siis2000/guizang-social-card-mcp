@@ -1,6 +1,6 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 /*
- * render.mjs -- Guizang Social Card standalone renderer
+ * render.mjs -- Social Card standalone renderer
  *
  *   node scripts/render.mjs <task-dir> [--parallel N] [--board xhs|square|wide]
  *                                   [--device-scale 1|2] [--no-remote-fonts]

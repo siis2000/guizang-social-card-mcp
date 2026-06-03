@@ -39,7 +39,7 @@ Editorial scale (default for 3:4):
 | Meta        | `.meta`     |  18px | 500    | +.20em   | mono      |
 | Label       | `.label`    |  18px | 500    | +.20em   | mono      |
 
-> **Restored 2026-05-27.** The previous defaults (900 / 700 / 700 / sans body / `−.01em`) made Editorial cards read as heavy infographic banners. They are NOT the Guizang showcase aesthetic — see `local-tests/demo-showcase/editorial.html` for the source-of-truth. The rule is restrained typography: light weights, **serif body italic-tolerant**, **wide tracking** on display + mono. Heaviness in Editorial = visual demotion to "generic landing-page", same trap as Swiss.
+> **Restored 2026-05-27.** The previous defaults (900 / 700 / 700 / sans body / `−.01em`) made Editorial cards read as heavy infographic banners. They are NOT the showcase aesthetic — see `local-tests/demo-showcase/editorial.html` for the source-of-truth. The rule is restrained typography: light weights, **serif body italic-tolerant**, **wide tracking** on display + mono. Heaviness in Editorial = visual demotion to "generic landing-page", same trap as Swiss.
 
 Swiss scale (default for 3:4):
 

@@ -1,4 +1,4 @@
-# Guizang Social Card Skill · 小红书图文 / 公众号封面对
+# Social Card Skill · 小红书图文 / 公众号封面对
 
 ![GitHub stars](https://img.shields.io/github/stars/op7418/guizang-social-card-skill?style=flat-square)
 ![License](https://img.shields.io/github/license/op7418/guizang-social-card-skill?style=flat-square)
@@ -19,26 +19,26 @@
 - **瑞士国际主义(Swiss)**。网格、单一锚点色、直角发丝线、极致字号对比,适合产品测评、数据、方法论、教程、AI 工具。
 - **新中式(Neo-Chinese)**。水墨留白、竖向排印、基底肌理,融合中式美学与现代网格,适合文化、茶事、民艺、建筑设计、东方哲思。
 
-> 这个 Skill 是 [guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill) 的姊妹项目,共享美学语言但独立维护。PPT 解决"横向翻页演讲",这里解决"静态信息流图文"。
+> 这个 Skill 是 [ppt-skill](https://github.com/op7418/guizang-ppt-skill) 的姊妹项目,共享美学语言但独立维护。PPT 解决"横向翻页演讲",这里解决"静态信息流图文"。
 
-![Guizang Social Card Skill 效果展示](https://github.com/user-attachments/assets/d370abcc-1fc4-4de1-903a-09020a6556ce)
+![Social Card Skill 效果展示](https://github.com/user-attachments/assets/d370abcc-1fc4-4de1-903a-09020a6556ce)
 
 ## 30 秒开始
 
 ```bash
-npx skills add https://github.com/op7418/guizang-social-card-skill --skill guizang-social-card-skill
+npx skills add https://github.com/op7418/guizang-social-card-skill --skill social-card-skill
 ```
 
 也可以直接把这段话发给有 shell 权限的 AI Agent:
 
 ```text
-帮我安装 guizang-social-card-skill。请把 https://github.com/op7418/guizang-social-card-skill 克隆到 ~/.claude/skills/guizang-social-card-skill,安装完成后检查 SKILL.md、assets/、references/ 是否存在。
+帮我安装 social-card-skill。请把 https://github.com/op7418/guizang-social-card-skill 克隆到 ~/.claude/skills/social-card-skill,安装完成后检查 SKILL.md、assets/、references/ 是否存在。
 ```
 
 已经安装过的话,用这段话更新:
 
 ```text
-帮我更新 guizang-social-card-skill。请进入 ~/.claude/skills/guizang-social-card-skill 执行 git pull,然后告诉我当前最新 commit。
+帮我更新 social-card-skill。请进入 ~/.claude/skills/social-card-skill 执行 git pull,然后告诉我当前最新 commit。
 ```
 
 安装后直接对 Agent 说:
@@ -76,7 +76,7 @@ npx skills add https://github.com/op7418/guizang-social-card-skill --skill guiza
 
 **✅ 合适**:小红书图文组图 / 公众号封面对 / 微信朋友圈封面 / 视频号封面 / 文章配图 / 教程拆页 / 数据回顾 / 旅行攻略 / 产品测评 / 截图说明
 
-**❌ 不合适**:横向翻页 PPT(用 [guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill))/ 长视频生成 / 纯图片修图 / 无版式诉求的纯文字编辑
+**❌ 不合适**:横向翻页 PPT(用 [ppt-skill](https://github.com/op7418/guizang-ppt-skill))/ 长视频生成 / 纯图片修图 / 无版式诉求的纯文字编辑
 
 ## 11 个小红书品类适配
 
@@ -122,7 +122,7 @@ npx skills add https://github.com/op7418/guizang-social-card-skill --skill guiza
 | Codex | 支持 | 适合长流程图文生成、调用图片源、做视觉检查 |
 | Cursor / 其他本地 Agent | 可用 | 需要能读写文件 + 执行 shell |
 | 魔塔社区 MCP 广场 | 支持 | 部署为 stdio MCP 服务,需配置 `MODELSCOPE_API_KEY` |
-| 其他 MCP 客户端 | 可用 | 通过 `npx guizang-social-card-mcp` 本地运行,也支持 modelcontextprotocol 协议的任何客户端 |
+| 其他 MCP 客户端 | 可用 | 通过 `npx social-card-mcp` 本地运行,也支持 modelcontextprotocol 协议的任何客户端 |
 | 普通 Chatbot | 不推荐 | 没有文件系统和渲染管线时无法稳定出图 |
 
 ## MCP 服务
@@ -174,16 +174,16 @@ node dist/server.js
 ### 方式一:一行命令安装(推荐)
 
 ```bash
-npx skills add https://github.com/op7418/guizang-social-card-skill --skill guizang-social-card-skill
+npx skills add https://github.com/op7418/guizang-social-card-skill --skill social-card-skill
 ```
 
 ### 方式二:把下面这段话直接发给 AI
 
-> 帮我安装 `guizang-social-card-skill` 这个 Claude Code skill。请按下面步骤做:
+> 帮我安装 `social-card-skill` 这个 Claude Code skill。请按下面步骤做:
 >
 > 1. 确保 `~/.claude/skills/` 目录存在(不存在就创建)
-> 2. 执行 `git clone https://github.com/op7418/guizang-social-card-skill.git ~/.claude/skills/guizang-social-card-skill`
-> 3. 验证:`ls ~/.claude/skills/guizang-social-card-skill/` 应该看到 `SKILL.md`、`assets/`、`references/` 三项
+> 2. 执行 `git clone https://github.com/op7418/guizang-social-card-skill.git ~/.claude/skills/social-card-skill`
+> 3. 验证:`ls ~/.claude/skills/social-card-skill/` 应该看到 `SKILL.md`、`assets/`、`references/` 三项
 > 4. 告诉我装好了,之后我说"做一套小红书图文"之类的话就会触发这个 skill
 
 把这段话复制粘贴给 Claude Code / Cursor / 任何有 shell 权限的 AI Agent,它会自动完成安装。
@@ -191,7 +191,7 @@ npx skills add https://github.com/op7418/guizang-social-card-skill --skill guiza
 ### 方式三:手动命令行
 
 ```bash
-git clone https://github.com/op7418/guizang-social-card-skill.git ~/.claude/skills/guizang-social-card-skill
+git clone https://github.com/op7418/guizang-social-card-skill.git ~/.claude/skills/social-card-skill
 ```
 
 ### 触发方式
@@ -275,7 +275,7 @@ node validate-social-deck.mjs path/to/task-dir
 ## 目录结构
 
 ```
-guizang-social-card-skill/
+social-card-skill/
 ├── SKILL.md                              ← Skill 主文件:7 步工作流
 ├── README.md                             ← 本文件
 ├── HANDOFF.md                            ← 交接文档:事实 + 版本历史
@@ -351,7 +351,7 @@ guizang-social-card-skill/
 - Massimo Vignelli / Helvetica Forever / 瑞士国际主义网格系统
 - Apartamento / The Gentlewoman 的图文比与人物纪实
 - 小红书 / Rednote 信息流里"克制反而吃香"的内容样本
-- 歸藏的图文卡片实践
+- 图文卡片实践
 
 ## Roadmap
 

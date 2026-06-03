@@ -1,13 +1,13 @@
 ---
-name: guizang-social-card-skill
-description: Generate Guizang-style social card image sets and WeChat official account cover pairs from articles, scripts, screenshots, product notes, subtitles, or photos. Use when the user asks for 小红书图文, Rednote/Xiaohongshu images, social cards, carousel images, 3:4 covers, 微信公众号封面, WeChat 21:9 + 1:1 covers, Swiss Style, or magazine-style social images.
+name: social-card-skill
+description: Generate social card image sets and WeChat official account cover pairs from articles, scripts, screenshots, product notes, subtitles, or photos. Use when the user asks for 小红书图文, Rednote/Xiaohongshu images, social cards, carousel images, 3:4 covers, 微信公众号封面, WeChat 21:9 + 1:1 covers, Swiss Style, or magazine-style social images.
 ---
 
-# Guizang Social Card Skill
+# Social Card Skill
 
 Create polished social card packages for Xiaohongshu/Rednote, WeChat Official Account, article covers, and platform thumbnails.
 
-This skill is self-contained. It borrows visual principles from the Guizang PPT style system, but it must not edit the original PPT skill, its templates, or its references. If the original PPT skill is available, you may read it for reference only. Put all generated work in the current project or in the user-requested output folder.
+This skill is self-contained. It borrows visual principles from the PPT style system, but it must not edit the original PPT skill, its templates, or its references. If the original PPT skill is available, you may read it for reference only. Put all generated work in the current project or in the user-requested output folder.
 
 ## What To Produce
 
@@ -16,7 +16,7 @@ Use this skill for:
 - Social card / carousel image sets: cover plus content pages, especially Xiaohongshu/Rednote 3:4.
 - WeChat Official Account cover pairs: one `21:9` main cover plus one `1:1` square cover, composed together in the same HTML for visual checking.
 - Screenshot-heavy product posts, article covers, tutorial carousels, outdoor/lifestyle notes, AI/product update explainers.
-- Social images that need Guizang-style Swiss or editorial magazine layouts.
+- Social images that need Swiss-style or editorial magazine layouts.
 
 Do not use this skill for:
 
@@ -62,7 +62,7 @@ For each page, decide:
 Read these files as needed:
 
 - `references/platform-specs.md` for exact ratios, output sizes, and naming.
-- `references/style-system.md` for Guizang editorial and Swiss visual rules.
+- `references/style-system.md` for editorial and Swiss visual rules.
 - `references/theme-presets.md` when choosing electronic-magazine palettes or Swiss accent palettes.
 - `references/layout-recipes.md` when selecting carousel/social-card/WeChat page structures.
 - `references/components.md` for the shared component spec: font stacks, type scale, minimum readable sizes, Chinese title length bands, Swiss card-fill mutual-exclusion rule, image-container ratio classes, spacing tokens, and Lucide icon rules.
@@ -287,7 +287,7 @@ Final response (after the user has reviewed or asked for auto-check) should incl
 
 ## Non-Negotiables
 
-- Never edit the original Guizang PPT skill or any upstream skill copied from elsewhere.
+- Never edit the original PPT skill or any upstream skill copied from elsewhere.
 - Do not create random decorative SVG ovals, blobs, rain drops, stickers, or meaningless circles.
 - Do not use nested cards or generic SaaS card layouts as the default.
 - Do not let text overflow, touch the edge, or collide with the footer band. Pin `.foot` with `margin-top: auto` inside a flex column, never with `position: absolute` over growing content.

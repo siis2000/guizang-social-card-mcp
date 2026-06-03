@@ -8,7 +8,7 @@ export interface ImageCandidate {
   license?: string;
 }
 
-const UA = "Mozilla/5.0 (compatible; guizang-social-card-mcp/0.1.0)";
+const UA = "Mozilla/5.0 (compatible; social-card-mcp/0.1.0)";
 
 /**
  * Search Unsplash by scraping the search page (no API key needed).

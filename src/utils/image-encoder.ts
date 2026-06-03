@@ -2,7 +2,7 @@ import { fetch } from "undici";
 
 export async function encodeImageToBase64(url: string): Promise<string> {
   const res = await fetch(url, {
-    headers: { "User-Agent": "guizang-social-card-mcp/0.1.0" },
+    headers: { "User-Agent": "social-card-mcp/0.1.0" },
   });
   if (res.status !== 200) {
     throw new Error(`Failed to fetch image: ${res.status}`);

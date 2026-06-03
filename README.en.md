@@ -1,4 +1,4 @@
-# Guizang Social Card Skill · Xiaohongshu Carousels / WeChat Cover Pairs
+# Social Card Skill · Xiaohongshu Carousels / WeChat Cover Pairs
 
 ![GitHub stars](https://img.shields.io/github/stars/op7418/guizang-social-card-skill?style=flat-square)
 ![License](https://img.shields.io/github/license/op7418/guizang-social-card-skill?style=flat-square)
@@ -16,26 +16,26 @@ Two visual systems share one workflow:
 - **Editorial**. Restrained layouts in the spirit of *Monocle* / *Kinfolk* / *Cereal*. Best for storytelling, lifestyle, travel, reading, film, and personal observation.
 - **Swiss International**. Grid-first, single anchor color, sharp hairlines, extreme type contrast. Best for product reviews, data, frameworks, tutorials, and AI tools.
 
-> Sister project to [guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill). Shared visual language, separate maintenance. PPT solves "horizontal swipe talks"; this one solves "static feed images."
+> Sister project to [ppt-skill](https://github.com/op7418/guizang-ppt-skill). Shared visual language, separate maintenance. PPT solves "horizontal swipe talks"; this one solves "static feed images."
 
-![Guizang Social Card Skill preview](https://github.com/user-attachments/assets/d370abcc-1fc4-4de1-903a-09020a6556ce)
+![Social Card Skill preview](https://github.com/user-attachments/assets/d370abcc-1fc4-4de1-903a-09020a6556ce)
 
 ## 30-second start
 
 ```bash
-npx skills add https://github.com/op7418/guizang-social-card-skill --skill guizang-social-card-skill
+npx skills add https://github.com/op7418/guizang-social-card-skill --skill social-card-skill
 ```
 
 Or paste this to an AI agent with shell access:
 
 ```text
-Install guizang-social-card-skill for me. Clone https://github.com/op7418/guizang-social-card-skill into ~/.claude/skills/guizang-social-card-skill, then verify that SKILL.md, assets/, and references/ exist.
+Install social-card-skill for me. Clone https://github.com/op7418/guizang-social-card-skill into ~/.claude/skills/social-card-skill, then verify that SKILL.md, assets/, and references/ exist.
 ```
 
 If you already installed it, update with:
 
 ```text
-Update guizang-social-card-skill for me. Go to ~/.claude/skills/guizang-social-card-skill, run git pull, then tell me the latest commit.
+Update social-card-skill for me. Go to ~/.claude/skills/social-card-skill, run git pull, then tell me the latest commit.
 ```
 
 Then ask your agent:
@@ -71,7 +71,7 @@ Turn this game guide copy into a Xiaohongshu set; pull some game art from Wallha
 
 **✅ Fits**: Xiaohongshu carousels / WeChat cover pairs / Moments covers / Channels covers / article visuals / tutorial pages / data recaps / travel guides / product reviews / screenshot explainers
 
-**❌ Doesn't fit**: Horizontal swipe decks (use [guizang-ppt-skill](https://github.com/op7418/guizang-ppt-skill)) / long-form video generation / pure photo retouching / plain-text editing without layout
+**❌ Doesn't fit**: Horizontal swipe decks (use [ppt-skill](https://github.com/op7418/guizang-ppt-skill)) / long-form video generation / pure photo retouching / plain-text editing without layout
 
 ## 11 Xiaohongshu categories
 
@@ -123,16 +123,16 @@ Tiered by "circle of competence" — see [`references/category-cookbook.md`](./r
 ### Option 1: One-line install (recommended)
 
 ```bash
-npx skills add https://github.com/op7418/guizang-social-card-skill --skill guizang-social-card-skill
+npx skills add https://github.com/op7418/guizang-social-card-skill --skill social-card-skill
 ```
 
 ### Option 2: Paste this to an AI
 
-> Install the `guizang-social-card-skill` Claude Code skill for me. Steps:
+> Install the `social-card-skill` Claude Code skill for me. Steps:
 >
 > 1. Make sure `~/.claude/skills/` exists (create if not)
-> 2. Run `git clone https://github.com/op7418/guizang-social-card-skill.git ~/.claude/skills/guizang-social-card-skill`
-> 3. Verify: `ls ~/.claude/skills/guizang-social-card-skill/` should show `SKILL.md`, `assets/`, `references/`
+> 2. Run `git clone https://github.com/op7418/guizang-social-card-skill.git ~/.claude/skills/social-card-skill`
+> 3. Verify: `ls ~/.claude/skills/social-card-skill/` should show `SKILL.md`, `assets/`, `references/`
 > 4. Tell me when done. Later, saying things like "make me a Xiaohongshu carousel" will trigger this skill.
 
 Paste the block above into Claude Code / Cursor / any AI agent with shell access.
@@ -140,7 +140,7 @@ Paste the block above into Claude Code / Cursor / any AI agent with shell access
 ### Option 3: Manual CLI
 
 ```bash
-git clone https://github.com/op7418/guizang-social-card-skill.git ~/.claude/skills/guizang-social-card-skill
+git clone https://github.com/op7418/guizang-social-card-skill.git ~/.claude/skills/social-card-skill
 ```
 
 ### How to trigger it
@@ -214,7 +214,7 @@ To switch themes, just replace the `<section class="poster" data-theme="...">` a
 ## Directory
 
 ```
-guizang-social-card-skill/
+social-card-skill/
 ├── SKILL.md                              ← Main skill file: 7-step workflow
 ├── README.md                             ← Chinese README
 ├── README.en.md                          ← This file
@@ -264,7 +264,7 @@ guizang-social-card-skill/
 - Massimo Vignelli / Helvetica Forever / Swiss International Typographic Style grid systems
 - Apartamento / The Gentlewoman image-to-text ratios and human portraiture
 - Restrained-wins-the-feed samples from Xiaohongshu / Rednote
-- Guizang's social card practice
+- Social card practice
 
 ## Roadmap
 

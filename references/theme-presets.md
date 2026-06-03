@@ -4,7 +4,7 @@ Use one theme for one image package. Do not mix palettes across pages unless the
 
 ## Editorial Magazine x E-ink Palettes
 
-These are adapted from the Guizang PPT electronic-magazine mode for static Rednote and WeChat images.
+These are adapted from the PPT electronic-magazine mode for static Rednote and WeChat images.
 
 ### Ink Classic
 
@@ -134,7 +134,7 @@ Magazine palette rules:
 
 ## Swiss International Palettes
 
-These are adapted from the Guizang PPT Swiss mode.
+These are adapted from the PPT Swiss mode.
 
 ### IKB Blue
 

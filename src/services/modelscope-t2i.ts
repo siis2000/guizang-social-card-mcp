@@ -13,7 +13,7 @@ export async function createImageTask(
   apiKey: string,
   prompt: string,
   model: string = "Tongyi-MAI/Z-Image-Turbo",
-  size: string = "1024x1024"
+  size: string = "1080x1440"
 ): Promise<string> {
   const res = await fetch(`${BASE_URL}/images/generations`, {
     method: "POST",
