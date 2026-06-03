@@ -25,6 +25,22 @@
 
 本项目提供标准 MCP 服务,可部署到魔塔社区 MCP 广场或本地运行。
 
+### 服务配置
+
+```json
+{
+  "mcpServers": {
+    "guizang-social-card": {
+      "command": "npx",
+      "args": ["guizang-social-card-mcp"],
+      "env": {
+        "MODELSCOPE_API_KEY": "${MODELSCOPE_API_KEY}"
+      }
+    }
+  }
+}
+```
+
 ### 工具列表
 
 | 工具 | 说明 |
@@ -32,6 +48,12 @@
 | `plan_card` | 根据提示词分析品类 → 选择视觉系统/主题 → 规划多页版式编排,返回完整 Plan JSON |
 | `generate_card` | 接收 Plan,调用魔塔 LLM 生成文案 + 魔塔文生图 + WebFetch 搜索免 Key 图源,返回图文素材 |
 | `compose_card` | 接收图文素材,套种子模板生成完整 HTML,图片内嵌为 Base64,输出单文件 HTML |
+
+### 环境变量
+
+| 变量名 | 必填 | 说明 |
+|--------|------|------|
+| `MODELSCOPE_API_KEY` | ✅ | 魔塔 API Key,用于 LLM 文案生成和文生图 |
 
 ### 本地运行
 
@@ -53,6 +75,12 @@ node dist/server.js
 3. 填写仓库地址,运行时选择 Node.js 20
 4. 配置环境变量: `MODELSCOPE_API_KEY` (填写你的魔塔 API Key)
 5. 提交审核,上线后即可被 MCP 客户端调用
+
+## 安装
+
+```bash
+npm install -g guizang-social-card-mcp
+```
 
 ## License
 
