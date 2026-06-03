@@ -4,7 +4,6 @@ import { fileURLToPath } from "node:url";
 import type { VisualSystem } from "../data/layout-recipes.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-// dist/tools/ is two levels down from project root
 const PROJECT_ROOT = join(__dirname, "..", "..");
 
 export async function loadTemplate(system: VisualSystem): Promise<string> {
