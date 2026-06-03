@@ -45,39 +45,19 @@ export function registerComposeCard(server: McpServer) {
       imageSelections: z.string().optional().describe("JSON object mapping pageIndex to candidate index for image selection"),
     },
     async ({ plan, text, images, theme, imageSelections }) => {
-      // 1. Parse inputs
       let planData: PlanData;
       let textData: TextData;
-      let imagesData: ImagesData;
+      let imagesData: ImagesData = {};
       let selections: Record<string, number> = {};
 
-      try {
-        planData = JSON.parse(plan);
-      } catch {
-        return { content: [{ type: "text" as const, text: JSON.stringify({ error: "Invalid plan JSON" }) }] };
-      }
-      try {
-        textData = JSON.parse(text);
-      } catch {
-        return { content: [{ type: "text" as const, text: JSON.stringify({ error: "Invalid text JSON" }) }] };
-      }
-      try {
-        imagesData = JSON.parse(images);
-      } catch {
-        imagesData = {};
-      }
-      if (imageSelections) {
-        try {
-          selections = JSON.parse(imageSelections);
-        } catch {
-          selections = {};
-        }
-      }
+      try { planData = JSON.parse(plan); } catch { return { content: [{ type: "text" as const, text: JSON.stringify({ error: "Invalid plan JSON" }) }] }; }
+      try { textData = JSON.parse(text); } catch { return { content: [{ type: "text" as const, text: JSON.stringify({ error: "Invalid text JSON" }) }] }; }
+      try { imagesData = JSON.parse(images); } catch { /* empty */ }
+      if (imageSelections) { try { selections = JSON.parse(imageSelections); } catch { /* empty */ } }
 
       const system = planData.style;
       const pages = planData.pages;
 
-      // 2. Load seed template
       let templateHtml: string;
       try {
         templateHtml = await loadTemplate(system);
@@ -86,18 +66,15 @@ export function registerComposeCard(server: McpServer) {
         return { content: [{ type: "text" as const, text: JSON.stringify({ error: `Failed to load template: ${msg}` }) }] };
       }
 
-      // 3. Apply theme
       templateHtml = applyTheme(templateHtml, system, theme);
 
-      // 4. Resolve images — download and encode selected candidates as Base64
-      const imageMap = new Map<number, string>(); // pageIndex -> data URI
+      const imageMap = new Map<number, string>();
       const imagePages = imagesData.pages ?? [];
 
       const encodeTasks = pages.map(async (page) => {
         const imgPage = imagePages.find((ip) => ip.pageIndex === page.index);
         if (!imgPage || imgPage.candidates.length === 0) return;
 
-        // Pick candidate: use selection if provided, else first candidate
         const idx = selections[String(page.index)] ?? 0;
         const candidate = imgPage.candidates[Math.min(idx, imgPage.candidates.length - 1)];
         if (!candidate?.url) return;
@@ -105,46 +82,27 @@ export function registerComposeCard(server: McpServer) {
         try {
           const dataUri = await Promise.race([
             encodeImageToBase64(candidate.url),
-            new Promise<never>((_, reject) =>
-              setTimeout(() => reject(new Error("Image fetch timeout")), 10_000)
-            ),
+            new Promise<never>((_, reject) => setTimeout(() => reject(new Error("Image fetch timeout")), 10_000)),
           ]);
           imageMap.set(page.index, dataUri);
-        } catch {
-          // Image fetch failed, skip embedding
-        }
+        } catch { /* skip */ }
       });
 
       await Promise.allSettled(encodeTasks);
 
-      // 5. Build sections
       const sections = pages.map((page) => {
         const copy = textData.pages[page.index] ?? { title: page.layoutName ?? page.layout };
         const imgUri = imageMap.get(page.index);
         return buildSection(system, page, copy, imgUri);
       });
 
-      // 6. Inject sections into template
       const finalHtml = injectSections(templateHtml, sections);
 
-      // 7. Estimate size
       const sizeBytes = Buffer.byteLength(finalHtml, "utf-8");
-      const estimatedSize = sizeBytes > 1_000_000
-        ? `~${(sizeBytes / 1_000_000).toFixed(1)}MB`
-        : `~${(sizeBytes / 1_000).toFixed(0)}KB`;
+      const estimatedSize = sizeBytes > 1_000_000 ? `~${(sizeBytes / 1_000_000).toFixed(1)}MB` : `~${(sizeBytes / 1_000).toFixed(0)}KB`;
 
       return {
-        content: [
-          {
-            type: "text" as const,
-            text: JSON.stringify({
-              html: finalHtml,
-              posterCount: pages.length,
-              board: "xhs",
-              estimatedSize,
-            }),
-          },
-        ],
+        content: [{ type: "text" as const, text: JSON.stringify({ html: finalHtml, posterCount: pages.length, board: "xhs", estimatedSize }) }],
       };
     }
   );

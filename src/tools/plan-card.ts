@@ -39,13 +39,9 @@ export function registerPlanCard(server: McpServer) {
       pageCount: z.number().min(3).max(9).default(5).describe("Number of pages (3-9, default 5)"),
     },
     async ({ prompt, style, pageCount }) => {
-      // 1. Match category from prompt keywords
       const category = matchCategory(prompt);
-
-      // 2. Select theme — default for the system, or override if category recommends same system
       const theme = getDefaultTheme(style);
 
-      // 3. Get layout pools — prefer category-specific, fall back to system defaults
       const getPool = (type: PageType): string[] => {
         const catLayouts = getLayoutsForCategory(category, style, type);
         return catLayouts.length > 0 ? catLayouts : SYSTEM_DEFAULTS[style][type];
@@ -55,7 +51,6 @@ export function registerPlanCard(server: McpServer) {
       const contentPool = getPool("content");
       const summaryPool = getPool("summary");
 
-      // 4. Build page plan
       const usedLayouts = new Set<string>();
       const pages = [];
 
@@ -81,14 +76,12 @@ export function registerPlanCard(server: McpServer) {
         const layout = pickLayout(pool, usedLayouts);
         usedLayouts.add(layout);
 
-        // Validate layout exists in the system
         const recipe = getRecipes(style, type).find((r) => r.id === layout);
         const layoutName = recipe?.name ?? layout;
 
         pages.push({ index: i, type, layout, layoutName, role });
       }
 
-      // 5. Build rationale
       const themeNames = getThemes(style).map((t) => t.id).join(", ");
       const rationale = [
         `品类识别: "${category.name}" (匹配关键词: ${category.keywords.filter((k) => prompt.includes(k)).join(", ") || "通用"})`,
